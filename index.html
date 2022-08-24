@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SLM Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        window.testTime=[
+            [performance.now(),"打开页面",0]
+        ]
+        window.addMoment=(moment_name)=>{
+            var length=window.testTime.length
+
+            var time1=performance.now()
+            var time0=window.testTime[length-1][0]
+            var t=time1-time0
+            console.log("time"+length,Math.round(t),moment_name)
+            window.testTime.push([
+                time1,moment_name,t
+            ])
+        }
+        window.param={
+            projectName:"huayirvm0616-0"
+        }
+    </script>
+    <script src="src/app.js"></script>
+</head>
+<body>
+    <main class="wrap">
+    </main>
+</body>
