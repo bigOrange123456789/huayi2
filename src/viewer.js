@@ -93,8 +93,6 @@ export class Viewer
 
   render() 
   {
-    this.renderer.clear();//绘制背景
-    this.renderer.render(this.scene, this.activeCamera);//不知为啥有两个render
     for(var i=0;i<this.lights.length;i++){
       this.lights[i].position.set(
         window.c.position.x,
@@ -102,6 +100,8 @@ export class Viewer
         window.c.position.z
       )
     }
+    this.renderer.clear();//绘制背景
+    this.renderer.render(this.scene, this.activeCamera);//不知为啥有两个render
     
   }
 

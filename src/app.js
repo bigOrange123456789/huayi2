@@ -27,10 +27,11 @@ class App
 
     this.createViewer(paramJson);
     
-    this.viewer.load([{
-      url:'assets/models/huayirvm0616-0.zip', 
-      tag: 1
-    }])
+    // this.viewer.load([{
+    //   url:'assets/models/huayirvm0616-0.zip', 
+    //   tag: 1
+    // }])
+    this.viewer.load([])//加载数组中的数据包并开启渐进式加载
 
   }
 
