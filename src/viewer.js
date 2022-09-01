@@ -145,10 +145,12 @@ export class Viewer
 
   setCamera() 
   {
-    this.defaultCamera.position.set(-459.8231509760614,  39.2496658862353,  2716.9451960982447);
-    this.defaultCamera.rotation.set( -0.18589681069184721,  0.6590683541369203,  0.11466413855442507)
+    // this.defaultCamera.position.set(-459.8231509760614,  39.2496658862353,  2716.9451960982447);
+    // this.defaultCamera.rotation.set( -0.18589681069184721,  0.6590683541369203,  0.11466413855442507)
     this.activeCamera = this.defaultCamera;
     window.c=this.defaultCamera
+    window.c.position.set(2412.9529736192576, 1249.1879311688676, -1996.7714275993872)
+    window.c.rotation.set(-1.5,  0.00013060678739590858,  3.1)
   }
 
   addLights ()
