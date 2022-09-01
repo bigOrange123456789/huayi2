@@ -1,5 +1,6 @@
 import {
   DirectionalLight,
+  PointLight,
   PerspectiveCamera,
   Scene,
   WebGLRendererEx,
@@ -94,6 +95,14 @@ export class Viewer
   {
     this.renderer.clear();//绘制背景
     this.renderer.render(this.scene, this.activeCamera);//不知为啥有两个render
+    for(var i=0;i<this.lights.length;i++){
+      this.lights[i].position.set(
+        window.c.position.x,
+        window.c.position.y,
+        window.c.position.z
+      )
+    }
+    
   }
 
   resize() 
@@ -157,10 +166,12 @@ export class Viewer
   {
     if (!this.options || !this.options.baked)
     {
-      const directionalLight  = new DirectionalLight(0xFFFFFF, 3.5);
-      directionalLight.position.set(0.5, 1.2, 0.5);
-  
-      this.scene.add(directionalLight);
+      this.lights=[
+        //new DirectionalLight(0xFFFFFF, 3.5),
+        new PointLight(0xFFFFFF, 9,0,0.5)//color , intensity , distance , decay 
+      ]
+      for(var i=0;i<this.lights.length;i++)
+        this.scene.add(this.lights[i])
     }
   }
 
