@@ -45,7 +45,7 @@ export class Viewer
     this.renderer = window.renderer = new WebGLRendererEx({antialias: true});
     this.renderer.physicallyCorrectLights = true;
     this.renderer.outputEncoding = sRGBEncoding;
-    this.renderer.setClearColor(0xcccccc);
+    this.renderer.setClearColor(0x56BCEF);//this.renderer.setClearColor(0xcccccc);
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(el.clientWidth, el.clientHeight);
     this.renderer.autoClear = false;
@@ -158,8 +158,8 @@ export class Viewer
     // this.defaultCamera.rotation.set( -0.18589681069184721,  0.6590683541369203,  0.11466413855442507)
     this.activeCamera = this.defaultCamera;
     window.c=this.defaultCamera
-    window.c.position.set(2412.9529736192576, 1249.1879311688676, -1996.7714275993872)
-    window.c.rotation.set(-1.5,  0.00013060678739590858,  3.1)
+    window.c.position.set( 1829.8654993109885, 535.2076347016717, -1315.144204938446)
+    window.c.rotation.set( -0.9072125912965568,  -0.43724666620216973,  -0.49636092404314786)
   }
 
   addLights ()

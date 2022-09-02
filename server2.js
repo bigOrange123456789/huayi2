@@ -1,5 +1,14 @@
-const commonPackCache={}
 const fs=require("fs")
+const commonPackCache={}
+function load(i){
+  if(i>=16800)return
+  var path="dist/asset/"+i+".zip"
+  fs.readFile(path, function (err, buffer) {//读取文件//将模型数据读取到buffer中，buffer应该是字符串类型的数据
+    commonPackCache[path]=buffer  
+    load(i+1)
+  });
+}
+load(0)
 const server=require('http').createServer(function (request, response) {
     var filePath;
     response.setHeader("Access-Control-Allow-Origin", "*");
@@ -18,15 +27,14 @@ const server=require('http').createServer(function (request, response) {
         response.write(buffer);
         response.end();
       }else{//无缓存
-        if(path.split("undefined")>0)return
-        try{
-          console.log("无缓存:"+path)
-          fs.readFile(path, function (err, buffer) {//读取文件//将模型数据读取到buffer中，buffer应该是字符串类型的数据
-            commonPackCache[path]=buffer  
-            response.write(buffer);
-            response.end();
-          });
-        }catch{console.log("eror!",path)}
+        // try{
+        //   console.log("无缓存:"+path)
+        //   fs.readFile(path, function (err, buffer) {//读取文件//将模型数据读取到buffer中，buffer应该是字符串类型的数据
+        //     commonPackCache[path]=buffer  
+        //     response.write(buffer);
+        //     response.end();
+        //   });
+        // }catch{console.log("eror!",path)}
       }
       
     });

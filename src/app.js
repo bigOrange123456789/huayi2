@@ -1,5 +1,5 @@
 import { Viewer } from './viewer.js';
-
+if(!window.loadSubZip3_worker0)window.loadSubZip3_worker0=new Worker("../lib/myWorker/loadSubZip.js")
 class App
 {
   constructor (el) 
