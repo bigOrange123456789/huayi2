@@ -6,6 +6,26 @@ http://localhost:3000/?scene=KaiLiNan&useP2P=true
 http://localhost:3000/?scene=KaiLiNan&useP2P=true&onlyP2P=true&needDetection=true
 http://100.66.196.213:3000/?scene=KaiLiNan&useP2P=true
 http://100.66.196.213:8082/?scene=KaiLiNan&useP2P=true&onlyP2P=true&needDetection=true
+-----------------------------------------------
+目前可以做的优化：
+  高延迟原因
+  初始包打包
+  大构件简化
+  有一些时候会出现通信错误
+  分块计算可见度
+  用安宁的完全状态的模型进行处理
+
+
+
+
+
+
+
+
+
+
+
+
 ----------------------代码说明----------------------
 SLMLoader.js :
   加载zip压缩包
