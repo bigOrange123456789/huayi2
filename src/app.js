@@ -1,5 +1,5 @@
 import { Viewer } from './viewer.js';
-if(!window.loadSubZip3_worker0)window.loadSubZip3_worker0=new Worker("../lib/myWorker/loadSubZip.js")
+// if(!window.loadSubZip3_worker0)window.loadSubZip3_worker0=new Worker("../lib/myWorker/loadSubZip.js")//决定是否使用双线程的方式加载
 class App
 {
   constructor (el) 

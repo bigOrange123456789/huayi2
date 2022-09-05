@@ -166,11 +166,15 @@ export class Viewer
   {
     if (!this.options || !this.options.baked)
     {
+      // var light0=new DirectionalLight(0xFFFFFF, 3.5)
+      // light0.rotation.set(Math.PI/4,0,0)
       this.lights=[
-        //new DirectionalLight(0xFFFFFF, 3.5),
+        new DirectionalLight(0xFFFFFF, 3.5),//light0//
         new PointLight(0xFFFFFF, 9,0,0.5)//color , intensity , distance , decay 
       ]
       for(var i=0;i<this.lights.length;i++)
+        // console.log(this.lights[i])
+        // this.lights[i].rotation.set(Math.PI/4,0,0)
         this.scene.add(this.lights[i])
     }
   }
