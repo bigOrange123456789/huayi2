@@ -1,11 +1,12 @@
 const fs=require("fs")
 const commonPackCache={}
 function load(i){
-  if(i>=16800)return
-  var path="dist/asset/"+i+".zip"
+  if(i>=16800){return;}
+  var path="dist/assets/models/huayi/"+i+".zip"
   fs.readFile(path, function (err, buffer) {//读取文件//将模型数据读取到buffer中，buffer应该是字符串类型的数据
-    commonPackCache[path]=buffer  
+    commonPackCache[path.split("huayi/")[1]]=buffer  
     load(i+1)
+    process.stdout.write('正在缓存数据包'+(i+1)+'/16800\t\r')
   });
 }
 load(0)
@@ -21,7 +22,7 @@ const server=require('http').createServer(function (request, response) {
       //if(path[0]==="/")path=path.slice(1,path.length)
       //path="dist/"+(path.split("dist/")[1])
       var path=filePath
-      var buffer=commonPackCache[path]
+      var buffer=commonPackCache[path.split("huayi/")[1]]
       if(buffer){//有缓存
         console.log(path)
         response.write(buffer);
